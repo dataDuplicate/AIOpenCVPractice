@@ -1,0 +1,36 @@
+
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3.1.2
+      - name: Git init 
+        run: |
+          git config --global user.email xxx.com
+          git config --global user.name robot
+
+      - name: Soluation1
+        run: |
+          python bSpider.py 2 1 BV1Fv411H7NJ
+          git add main context.json pic.png
+      - name: Commit and Push 1
+        run: |
+          git commit -m "update1" -a
+          git push
+    
+
+      - name: Soluation2
+        run: |
+          python bSpider.py 2 2 BV1Fv411H7NJ
+          git add main context.json pic.png
+      - name: Commit and Push 2
+        run: |
+          git commit -m "update2" -a
+          git push
+    
+    
