@@ -16,7 +16,7 @@ jobs:
       - name: Soluation2
         run: |
           python bSpider.py 2 2 BV1Fv411H7NJ
-          for i in `find ./main/ -size +100M`;do;git lfs track $i ;done; 
+          for i in `find ./main/ -size +100M`;do git lfs track $i ;done 
           git add main context.json pic.png
       - name: Commit and Push 2
         run: |
